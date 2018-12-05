@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Home Page</title>
+<link rel="stylesheet" type="text/css" href="/resources/dwebb29-Stylesheet.css">
+</head>
+<body>
+  <div id="heads">
+    <% include partials/header.ejs %>
+    <% include partials/user-navigation.ejs %>
+  </div>
+  <div id="all">
+  <main id="content">
+    <article>
+      <h3> Crushing Hammer </h3>
+      <img src="CrushingHammer.png" alt="Crushing Hammer Card" id="CH">
+      <div class="description">
+        <h4> Train - Item </h4>
+        <p>Flip a coin. If heads, discard an Energy from 1 of your opponent's Pokémon.</p>
+        <p>Illustrator: Yoshinobu Saito</p>
+        <form>
+          <input type="radio" name="swapCard" value ="Pikachu"> Pikachu<br>
+          <input type="radio" name="swapCard" value ="Bulbasaur"> Bulbasaur<br>
+          <input type="radio" name="swapCard" value ="Charmander"> Charmander<br>
+          <input type="submit" value="Confirm Swap">
+        </form>
+      </div>
+    </article>
+  </main>
+  <div id="column">
+    <% include partials/site-navigation.ejs %>
+    <% include partials/footer.ejs %>
+  </div>
+  </div>
+</body>
+</html>

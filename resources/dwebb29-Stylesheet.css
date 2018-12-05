@@ -1,0 +1,217 @@
+html {
+  height: 100%;
+}
+body {
+  background-color: #333333;
+  height: 100%;
+  width: 100%;
+  margin: 0; /* Fill The Page */
+  font-family: "Trebuchet MS", sans-serif;
+  display: flex;
+  flex-direction: column;
+
+}
+header {
+  width: 100%;
+  height: 80%;
+}
+header img{
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* Adjusts w/ the page. */
+  filter: blur(3px); /* Blur it for fun. */
+  margin: 0px;
+}
+nav {
+  width: 100%;
+  height: 20%;
+  text-align: center;
+  letter-spacing: 2px; /* Spacing for aesthetic. */
+  background-color: hsl(0, 0%, 13%);
+  margin: 0px;
+  padding-bottom: 8px;
+  overflow: hidden; /*Cut these off when window shrinks */
+}
+aside {
+   /*side navigation bar */
+  width: 203px;
+  height: 80%;
+  overflow: hidden;
+  background-color: hsl(0, 0%, 18%);
+  margin: 0px;
+}
+ul {
+  list-style-type: none;
+}
+footer {
+  height: 5%;
+  background-color: hsl(0, 0%, 18%);
+  text-align: center;
+  width: 203px;
+  margin: 0;
+}
+article {
+  overflow: hidden;
+  /* border: 2px solid orange; */
+  height: 410px;
+  width: 500px;
+  margin: 20px;
+  
+
+}
+
+h1, h2, h3, h4, h5, h6{
+  font-weight: normal;
+  color: #99ccff
+}
+
+article h3 {
+  text-align: left;
+  color: #99ccff;
+  clear: left;
+  padding-top: 10px;
+  padding-left: 10px;
+  overflow: contain;
+}
+
+table {
+  color: #cccccc;
+  width: 75%
+}
+table tr th {
+  font-size: 25px;
+  font-weight: bold;
+  border-bottom: 2px solid white;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+table tr td {
+  padding-right: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 18px;
+}
+table tr td form[action="item.html"] {
+  float: right;
+  margin-right: 2px;
+}
+table tr td form[action="myItems.html"] {
+  float: right;
+}
+#all{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+}
+#testItem {
+  display: flex;
+}
+#testContainer {
+  display: flex;
+}
+
+#content {
+  display: flex;
+  flex-direction: row;
+  /* border: 2px solid red;*/
+  order: 2;
+  flex-grow: 2;
+  flex-wrap: wrap;
+}
+
+#login {
+  float: right;
+  margin-right: 5px;
+  letter-spacing: 2px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  color: #333333;
+}
+
+#heads {
+  height: 255px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#sidebar {
+  letter-spacing: 2px;
+  font-size: 20px;
+  display: flex;
+  flex-direction: column;
+  order: 1;
+}
+
+#CH {
+  float: left;
+  position: relative;
+}
+
+#column {
+}
+
+#columnaside {
+  height: 95%;
+}
+ul#nav-items li {
+  display: inline-block;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 25px;
+}
+
+ul#nav-items li a {
+}
+
+ul#sidebar li {
+  padding:5px;
+}
+
+ul.breadcrumb li a {
+  color: #cccccc;
+  text-decoration: none;
+}
+
+
+ul.breadcrumb li a:hover {
+    color: #99ccff;
+    text-decoration: underline;
+    text-decoration-color: white;
+}
+
+.description {
+  position: relative;
+}
+.description p{
+  color: #cccccc;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.description h4 {
+  padding-left: 10px;
+  padding-right: 10px;
+  color: #cccccc;
+}
+.checked{
+  color: #99ccff;
+}
+
+.singleItem {
+  display: flex;
+  flex-direction: row;
+}
+
+aside ul li.current a{
+  text-decoration: line-through;
+  text-decoration-color: #cccccc;
+  color: #99ccff
+}
+nav ul li.current a {
+  text-decoration: line-through;
+  text-decoration-color: #cccccc;
+  color: #99ccff
+}

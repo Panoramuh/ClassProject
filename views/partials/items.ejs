@@ -1,0 +1,13 @@
+<article class = "singleItem">
+   <img src="<%= thisCard.itemIMG %>" alt="Image of Card"></br>
+   <aside>
+   <h3><%= thisCard.itemName %></h3></br>
+   <strong>Type:</strong><%= thisCard.itemType %></br>
+   <strong>Bio:</strong><%= thisCard.itemBio %></br>
+   <strong>Rating:</strong><%= thisCard.itemRating %></br>
+   <form action="swap.ejs">
+     <input type="submit" value="Swap It" />
+   </form>
+   <button type="button">Rate It</button>
+  </aside>
+</article>

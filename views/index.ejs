@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Home</title>
+<link rel="stylesheet" type="text/css" href="/resources/dwebb29-Stylesheet.css">
+</head>
+<body>
+  <div id="heads">
+    <% include partials/header.ejs %>
+    <% include partials/user-navigation.ejs %>
+  </div>
+
+  <div id="all">
+<main id="content">
+  <article>
+    <h3>Welcome to My Store! Where people come to buy things.<br/>
+      <br/>
+    Check out how empty this entire site is! <br/>
+    </h3>
+  </article>
+  <article id="testItem">
+    <h3> Testing Our More Stuff</h3>
+    <p> More Stuff To Go Here <p>
+  </article>
+</main>
+    <div id="column">
+      <% include partials/site-navigation.ejs %>
+      <% include partials/footer.ejs %>
+    </div>
+  </div>
+</body>
+</html>

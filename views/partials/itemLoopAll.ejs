@@ -1,0 +1,12 @@
+<!DOCTYPE HTML>
+<% allItems.forEach(function(array){ %>
+<article class = "singleItem">
+   <img src="<%= array.itemIMG %>" alt="Image of Card"><br>
+   <aside>
+   <h3><%= array.itemName %></h3><br>
+   <strong>Type:</strong><%= array.itemType %><br>
+   <strong>Bio:</strong><%= array.itemBio %><br>
+   <strong>Rating:</strong><%= array.itemRating %><br>
+  </aside>
+</article>
+<% }); %>

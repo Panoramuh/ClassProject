@@ -1,0 +1,129 @@
+<!DOCTYPE. html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>Home Page</title>
+<link rel="stylesheet" type="text/css" href="/resources/dwebb29-Stylesheet.css">
+</head>
+<body>
+  <div id="heads">
+    <% include partials/header.ejs %>
+    <% include partials/user-navigation.ejs %>
+  </div>
+  <div id="all">
+  <main id="content">
+    <h2>Charlotte's Swap Offers</h2>
+    <table>
+      <tr>
+        <th> Book </th>
+        <th> My Rating </th>
+        <th> Status </th>
+      </tr>
+      <% currUser.userItems.forEach(element, index){ %>
+      <tr>
+        <td><%= currUser.userItems[index].item %></td>
+        <% switch(currUser.userItems[index].rating){ %>
+        <% case 1: %>
+          <td>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </td>
+        <% break; %>
+        <% case 2: %>
+          <td>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </td>
+        <% break; %>
+        <% case 3: %>
+        <td>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star"></span>
+          <span class="fa fa-star"></span>
+        </td>
+        <% break; %>
+        <% case 4: %>
+          <td>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          </td>
+        <% break; %>
+        <% case 5: %>
+          <td>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          </td>
+        <% break; %>
+        <% default: %>
+          <td>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          </td>
+        <% break; %>
+        <% } %>
+            <td>
+              <form action="/mySwaps" method="POST">
+            <% if(currUser.userItem[index].status == "Available"){ %>
+                <input type="hidden" name="theItem" value="<%= currUser.userItems[index].item %>">
+                <button name="update" type="submit" value="<%= currUser.userItems[index].item %>">Update</button>
+                <button name="offer" type="submit">Offer</button>
+                <button name="delete" type="submit">Delete</button>
+
+            <% } %>
+            <% else if(currUser.userItem[index].status == "Pending"){ %>
+                <input type="hidden" name="theItem" value="<%= currUser.userItems[index].item %>">
+                <button name="accept" type="submit">Accept</button>
+                <button name="reject" type="submit">Reject</button>
+                <button name="withdraw" type="submit">Withdraw</button>
+            <% } %>
+            else{
+                <input type="hidden" name="theItem" value="<%= currUser.userItems[index].item %>">
+                <button name="update" type="submit" value="<%= currUser.userItem[index].item %>">Update</button>
+             <% } %>
+              </form>
+            </td>
+      </tr>
+      <% } %>
+    </table>
+    <!--<table>
+      <tr>
+        <th>Book</th>
+        <th>Swap Offer</th>
+        <th>Status</th>
+      </tr>
+      <tr>
+        <td><a href="/item/1">Snivy</a></td>
+        <td><a href="/item/2">Tepig</a></td>
+        <td><button type="button">Accept</button><button type="button">Reject</button></td>
+      </tr>
+      <tr>
+        <td><a href="/item/6">Ducklett</a></td>
+        <td><a href="/item/5">Darumaka</a></td>
+        <td><button type="button">Withdraw Swap</button></td>
+      </tr>
+    </table>-->
+  </main>
+  <div id="column">
+    <% include partials/site-navigation.ejs %>
+    <% include partials/footer.ejs %>
+  </div>
+</div>
+</body>
+</html>

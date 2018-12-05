@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+<meta charset="utf-8">
+<title>My Cards</title>
+<link rel="stylesheet" type="text/css" href="/resources/dwebb29-Stylesheet.css">
+<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <div id="heads">
+  <% include partials/header.ejs %>
+  <% include partials/user-navigation.ejs %>
+  </div>
+    <div id="all">
+    <main id="content">
+    <table>
+      <tr>
+        <th> Card </th>
+        <th> My Rating </th>
+        <th> Status </th>
+        <th> Actions </th>
+      </tr>
+
+      <% items.forEach(function(element){ %>
+      <tr>
+        <td>
+          <%= element.itemName %>
+        </td>
+        <td>
+          <% if(element.itemRating == 1){ %>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          <%} else if(element.itemRating == 2){ %>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          <% } else if(element.itemRating == 3){ %>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          <% } else if(element.itemRating == 4){ %>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star"></span>
+          <% } else if(element.itemRating == 5){ %>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          <% } else{ %>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+            <span class="fa fa-star"></span>
+          <% } %>
+          </td>
+          <td>
+            <%= element.status %>
+          </td>
+          <td>
+          <form action="/update" id="itemActions" method="POST">
+            <select name="action"form="itemActions">
+              <option value="<%= element._id %>">Update</option>
+              <option value="<%= element._id %>" >Delete</option>
+              <% if(element.status != "available" && element.status != "swapped"){ %>
+              <option value="<%=currentProfile._id %>" >Accept</option>
+              <option value="<%=currentProfile._id %>" >Reject</option>
+              <option value="<%=currentProfile._id %>" >Withdraw</option>
+            </select>
+              <% } %>
+          </form>
+          <input type="submit" value="Submit" form="itemActions"/>
+        </td>
+      </tr>
+      <% }); %>
+    </table>
+  </main>
+    <div id="column">
+      <% include partials/site-navigation.ejs %>
+      <% include partials/footer.ejs %>
+    </div>
+  </div>
+</body>
+</html>
