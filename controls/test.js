@@ -27,7 +27,7 @@ app.get('/', async function(req, res, next) {
 
 //  var test;
 
-
+//Test addition
 //const itemPromise = await ItemDB.getItem('1');
 //const allItems = await ItemDB.getAllItems();
 
